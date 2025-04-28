@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const name = ref("Jhon Doe");
 const status = ref("active");
@@ -26,6 +26,16 @@ const addTask = () => {
 const deleteTask = (index) => {
   tasks.value.splice(index, 1);
 };
+
+onMounted(async () => {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await res.json();
+    tasks.value = data.map((task) => task.title);
+  } catch (error) {
+    console.log("Error featching tasks");
+  }
+});
 </script>
 
 <template>
@@ -34,26 +44,29 @@ const deleteTask = (index) => {
   <p v-if="status === 'active'">User is active</p>
   <p v-else-if="status === 'pendig'">User is pending</p>
   <p v-else="status !== 'active'">User is inactive</p>
-  <!-- Form  -->
-  <form @submit.prevent="addTask">
-    <label for="newTask">Add Task</label>
-    <input type="text" id="newTask" name="newTask" v-model="newTask" />
-    <button type="submit">Submit</button>
-  </form>
-  <!-- if else statement end -->
-  <h3>Tasks:</h3>
-  <ul>
-    <li v-for="(task, index) in tasks" :key="task">
-      <span>{{ task }}</span>
-      <button @click="deleteTask(index)">x</button>
-    </li>
-  </ul>
   <!-- v-bind:href="link" or :href="link" -->
   <a :href="link">Click for google</a>
   <br />
   <!-- @click and v-on:click are same -->
   <!-- <button v-on:click="toggleStatus">Change Status</button> -->
   <button @click.prevent="toggleStatus">Change Status</button>
+  <br />
+  <!-- Form  -->
+  <form @submit.prevent="addTask">
+    <label for="newTask">Add Task</label>
+    <input type="text" id="newTask" name="newTask" v-model="newTask" />
+    <button type="submit">Submit</button>
+  </form>
+  <br />
+  <!-- if else statement end -->
+  <h3>Tasks:</h3>
+  <br />
+  <ul>
+    <li v-for="(task, index) in tasks" :key="task">
+      <span>{{ task }}</span>
+      <button @click="deleteTask(index)">x</button>
+    </li>
+  </ul>
 </template>
 
 <style scoped>
