@@ -9,6 +9,13 @@ export default defineConfig({
   plugins: [vue(), vueDevTools()],
   server: {
     port: 3001,
+    proxy: {
+      "/api": {
+        target: "http://localhost:8000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
   resolve: {
     alias: {
