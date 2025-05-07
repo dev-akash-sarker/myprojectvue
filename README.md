@@ -2,7 +2,7 @@
 
 ### :camera: Screenshot
 
-Some animations are not presented correctly in the full page screenshot, so make sure to visit the web app [here](https://keyboardshop.vercel.app/).
+Some animations are not presented correctly in the full page screenshot, so make sure to visit the web app [here](https://resilient-pegasus-a3edc8.netlify.app/).
 
 ![Landing Page](./src/assets/screenshots/one_home.png)
 ![View Jobs](./src/assets/screenshots/two_jobs.png)
@@ -11,4 +11,4 @@ Some animations are not presented correctly in the full page screenshot, so make
 
 ### :link: Links
 
-You can find a live deployment of this project [right here!](https://keyboardshop.vercel.app/)
+You can find a live deployment of this project [right here!](https://resilient-pegasus-a3edc8.netlify.app/)
