@@ -1,29 +1,14 @@
-# myprojectvue
+# VUE.JS CRUD PROJECT FOR JOB LISING
 
-This template should help get you started developing with Vue 3 in Vite.
+### :camera: Screenshot
 
-## Recommended IDE Setup
+Some animations are not presented correctly in the full page screenshot, so make sure to visit the web app [here](https://keyboardshop.vercel.app/).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+![Landing Page](./src/assets/screenshots/one_home.png)
+![View Jobs](./src/assets/screenshots/two_jobs.png)
+![Add Jobs](./src/assets/screenshots/three_addjobs.png)
+![Delete and Update Jobs](./src/assets/screenshots/four_vuejobs.png)
 
-## Customize configuration
+### :link: Links
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+You can find a live deployment of this project [right here!](https://keyboardshop.vercel.app/)
